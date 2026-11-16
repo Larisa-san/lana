@@ -1,3 +1,4 @@
+
 'use client';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -5,7 +6,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import siteData from '@/content/site.json';
 
-// Fix for default marker icon in react-leaflet
 const icon = L.icon({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -17,7 +17,10 @@ const icon = L.icon({
 });
 
 export default function MapContent() {
-  const position: [number, number] = [siteData.coordinates.lat, siteData.coordinates.lng];
+  const position: [number, number] = [
+    siteData.coordinates.lat,
+    siteData.coordinates.lng,
+  ];
 
   return (
     <MapContainer
@@ -27,8 +30,8 @@ export default function MapContent() {
       className="h-[400px] w-full rounded-lg"
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position} icon={icon}>
         <Popup>
@@ -42,4 +45,3 @@ export default function MapContent() {
     </MapContainer>
   );
 }
-
