@@ -147,34 +147,54 @@ export default function HomePage({ params: { locale } }: Props) {
         : 'Mobile Home Lana – prices per night'}
     </p>
 
-    <div className="mx-auto max-w-2xl overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-      <table className="w-full">
-        <thead className="bg-gray-100">
-          <tr>
-            <th className="p-4 text-left">
-              {locale === 'hr' ? 'Razdoblje' : 'Period'}
-            </th>
-            <th className="p-4 text-right">
-              {locale === 'hr' ? 'Cijena' : 'Price'}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-t">
-            <td className="p-4">
-              {locale === 'hr' ? 'Lipanj i rujan' : 'June and September'}
-            </td>
-            <td className="p-4 text-right font-semibold">70 €</td>
-          </tr>
-          <tr className="border-t">
-            <td className="p-4">
-              {locale === 'hr' ? 'Srpanj i kolovoz' : 'July and August'}
-            </td>
-            <td className="p-4 text-right font-semibold">150 €</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    
+<div className="mx-auto max-w-2xl overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+  <table className="w-full text-sm md:text-base">
+    <thead className="bg-gray-100">
+      <tr>
+        <th className="p-3 text-left">
+          {locale === 'hr' ? 'Razdoblje' : 'Period'}
+        </th>
+        <th className="p-3 text-right">
+          {locale === 'hr' ? 'Cijena' : 'Price'}
+        </th>
+        <th className="p-3 text-right">
+          {locale === 'hr' ? 'Bazna cijena' : 'Base price'}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-t">
+        <td className="p-3">
+          {locale === 'hr' ? 'Lipanj i rujan' : 'June and September'}
+        </td>
+        <td className="p-3 text-right font-semibold">70 €</td>
+        <td className="p-3 text-right">70 €</td>
+      </tr>
+      <tr className="border-t">
+        <td className="p-3">
+          {locale === 'hr' ? 'Srpanj i kolovoz' : 'July and August'}
+        </td>
+        <td className="p-3 text-right font-semibold">150 €</td>
+        <td className="p-3 text-right">150 €</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="mt-5 text-center">
+  <a
+    href="/cjenik-mhlana.xml"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-700 underline hover:text-blue-900"
+  >
+    {locale === 'hr'
+      ? 'Preuzmi cjenik u XML formatu'
+      : 'Download price list in XML format'}
+  </a>
+</div>
+
 
     <p className="mt-5 text-center text-sm text-gray-600">
       {locale === 'hr'
