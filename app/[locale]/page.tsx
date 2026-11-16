@@ -134,6 +134,56 @@ export default function HomePage({ params: { locale } }: Props) {
         </div>
       </section>
 
+{/* Cjenik Mobile Home Lana */}
+<section id="pricing" className="scroll-mt-20 bg-white py-12 md:py-16">
+  <div className="container mx-auto px-4">
+    <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
+      {locale === 'hr' ? 'Cjenik 2027.' : 'Price List 2027'}
+    </h2>
+
+    <p className="mb-8 text-center text-gray-600">
+      {locale === 'hr'
+        ? 'Mobile Home Lana – cijene po noćenju'
+        : 'Mobile Home Lana – prices per night'}
+    </p>
+
+    <div className="mx-auto max-w-2xl overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+      <table className="w-full">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="p-4 text-left">
+              {locale === 'hr' ? 'Razdoblje' : 'Period'}
+            </th>
+            <th className="p-4 text-right">
+              {locale === 'hr' ? 'Cijena' : 'Price'}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-t">
+            <td className="p-4">
+              {locale === 'hr' ? 'Lipanj i rujan' : 'June and September'}
+            </td>
+            <td className="p-4 text-right font-semibold">70 €</td>
+          </tr>
+          <tr className="border-t">
+            <td className="p-4">
+              {locale === 'hr' ? 'Srpanj i kolovoz' : 'July and August'}
+            </td>
+            <td className="p-4 text-right font-semibold">150 €</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p className="mt-5 text-center text-sm text-gray-600">
+      {locale === 'hr'
+        ? 'Sve cijene izražene su u eurima po noćenju.'
+        : 'All prices are in euros per night.'}
+    </p>
+  </div>
+</section>
+
       {/* Contact Section */}
       <section id="contact" className="scroll-mt-20 bg-gradient-to-br from-gray-50 to-gray-100 py-12 md:py-16">
         <div className="container px-4">
